@@ -1,4 +1,4 @@
-function Header(props):JSX.Element{
+function Header():JSX.Element{
   return(
     <section className="film-card">
       <div className="film-card__bg">
