@@ -1,7 +1,8 @@
 import Films from '../../components/FilmCards/Films';
 import Header from '../../components/Header/Header';
+import { IFilm } from '../../types/TypeFilms';
 
-function Main(): JSX.Element {
+function Main(props:IFilm): JSX.Element {
   return (
     <>
       <Header />
@@ -10,39 +11,58 @@ function Main(): JSX.Element {
           <h2 className="catalog__title visually-hidden">Catalog</h2>
           <ul className="catalog__genres-list">
             <li className="catalog__genres-item catalog__genres-item--active">
-              <a href='#' className="catalog__genres-link">All genres</a>
+              <a href='/#' className="catalog__genres-link">All genres</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Comedies</a>
+              <a href='/#' className="catalog__genres-link">Comedies</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Crime</a>
+              <a href='/#' className="catalog__genres-link">Crime</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Documentary</a>
+              <a href='/#' className="catalog__genres-link">Documentary</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Dramas</a>
+              <a href='/#' className="catalog__genres-link">Dramas</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Horror</a>
+              <a href='/#' className="catalog__genres-link">Horror</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Kids & Family</a>
+              <a href='/#' className="catalog__genres-link">Kids & Family</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Romance</a>
+              <a href='/#' className="catalog__genres-link">Romance</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Sci-Fi</a>
+              <a href='/#' className="catalog__genres-link">Sci-Fi</a>
             </li>
             <li className="catalog__genres-item">
-              <a href='#' className="catalog__genres-link">Thrillers</a>
+              <a href='/#' className="catalog__genres-link">Thrillers</a>
             </li>
           </ul>
           <div className="catalog__films-list">
-            <Films />
-
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
+            <Films {...props} />
           </div>
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
