@@ -1,11 +1,11 @@
-import Films from '../../components/FilmCards/Films';
-import Header from '../../components/Header/Header';
-import { IFilm } from '../../types/TypeFilms';
+import Film from '../../components/film-card/film-card';
+import Header from '../../components/header/header';
+import { IPropsFilms } from '../../types/type-films/Type-Films';
 
-function Main(props:IFilm): JSX.Element {
+function MainPage(FilmList:IPropsFilms): JSX.Element {
   return (
     <>
-      <Header />
+      <Header Film={FilmList.Films[0]} />
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
@@ -42,27 +42,11 @@ function Main(props:IFilm): JSX.Element {
             </li>
           </ul>
           <div className="catalog__films-list">
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
-            <Films {...props} />
+            {
+              FilmList.Films.map((film)=>
+                <Film key={film.name} Film={film} />
+              )
+            }
           </div>
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -84,4 +68,4 @@ function Main(props:IFilm): JSX.Element {
     </>
   );
 }
-export default Main;
+export default MainPage;

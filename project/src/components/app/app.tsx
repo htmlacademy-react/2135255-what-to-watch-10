@@ -1,9 +1,9 @@
-import Main from '../../pages/main/Main';
-import { IFilm } from '../../types/TypeFilms';
+import MainPage from '../../pages/main-page/main-page';
+import { IPropsFilms } from '../../types/type-films/Type-Films';
 
-function App(props:IFilm):JSX.Element {
+function App(films:IPropsFilms):JSX.Element {
   return (
-    <Main {...props} />
+    <MainPage Films={films.Films} />
   );
 }
 export default App;
