@@ -5,9 +5,9 @@ function Header(Film:IPropsFilm):JSX.Element{
   return(
     <section className="film-card">
       <div className="film-card__bg">
-        <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+        <img src={Film.Film.img} alt="The Grand Budapest Hotel" />
       </div>
-      <h1 className="visually-hidden">WTW</h1>
+      <h1 className="visually-hidden">{Film.Film.name}</h1>
       <header className="page-header film-card__head">
         <div className="logo">
           <a className="logo__link">
