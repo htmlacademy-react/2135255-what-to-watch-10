@@ -1,4 +1,4 @@
-import Film from '../../components/film-card/film-card';
+import FilmCard from '../../components/film-card/film-card';
 import Header from '../../components/header/header';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
@@ -44,7 +44,7 @@ function MainPage(FilmList:IPropsFilms): JSX.Element {
           <div className="catalog__films-list">
             {
               FilmList.Films.map((film)=>
-                <Film key={film.name} Film={film} />
+                <FilmCard key={film.name} Film={film} />
               )
             }
           </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { IPropsFilm } from '../../types/type-films/Type-Films';
 
 function FilmCard(props:IPropsFilm):JSX.Element{
@@ -7,7 +8,9 @@ function FilmCard(props:IPropsFilm):JSX.Element{
         <img src={props.Film.img} alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
       </div>
       <h3 className="small-film-card__title">
-        <a className="small-film-card__link" href="film-page.html">{props.Film.name} дата выхода {props.Film.date.toDateString()}</a>
+        <Link className="small-film-card__link" to={`/films/${props.Film.id}`}>
+          {props.Film.name} дата выхода {props.Film.date.toDateString()}
+        </Link>
       </h3>
     </article>
   );

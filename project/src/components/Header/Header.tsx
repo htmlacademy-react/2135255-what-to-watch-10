@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../enums/route-enum';
 import { IPropsFilm } from '../../types/type-films/Type-Films';
 import Promo from '../promo/promo';
 
@@ -23,7 +25,7 @@ function Header(Film:IPropsFilm):JSX.Element{
             </div>
           </li>
           <li className="user-block__item">
-            <a className="user-block__link">Sign out</a>
+            <Link to={AppRoute.Login} className="user-block__link">Sign out</Link>
           </li>
         </ul>
       </header>
