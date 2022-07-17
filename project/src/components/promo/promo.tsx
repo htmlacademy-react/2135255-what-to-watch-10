@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from '../../enums/route-enum';
 import { IPropsFilm } from '../../types/type-films/Type-Films';
 
-function Promo(Film:IPropsFilm):JSX.Element{
+function Promo(props:IPropsFilm):JSX.Element{
   return(
     <div className="film-card__wrap">
       <div className="film-card__info">
         <div className="film-card__poster">
-          <img src={Film.Film.img} alt="The Grand Budapest Hotel poster" width="218" height="327" />
+          <img src={props.Film.img} alt="The Grand Budapest Hotel poster" width="218" height="327" />
         </div>
         <div className="film-card__desc">
-          <h2 className="film-card__title">{Film.Film.name}</h2>
+          <h2 className="film-card__title">{props.Film.name}</h2>
           <p className="film-card__meta">
             <span className="film-card__genre">Drama</span>
             <span className="film-card__year">2014</span>
@@ -21,7 +21,7 @@ function Promo(Film:IPropsFilm):JSX.Element{
               <svg viewBox="0 0 19 19" width="19" height="19">
                 <use xlinkHref="#play-s"></use>
               </svg>
-              <span> <Link to={AppRoute.Player.replace(':id',Film.Film.id)}>Play</Link></span>
+              <span> <Link to={`${AppRoute.Player}${props.Film.id}`}>Play</Link></span>
             </button>
             <button className="btn btn--list film-card__button" type="button">
               <svg viewBox="0 0 19 20" width="19" height="20">

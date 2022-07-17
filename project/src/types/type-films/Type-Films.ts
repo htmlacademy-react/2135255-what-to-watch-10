@@ -5,6 +5,7 @@ export interface IFilm{
   img:string;
   genre:string;
   description:string;
+  video:string;
 }
 export interface IPropsFilms{
   Films:IFilm[]

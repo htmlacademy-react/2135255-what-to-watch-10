@@ -15,7 +15,9 @@ function FilmFooter(props:IFilmsFooter):JSX.Element{
           {
             props.Films.map((Item)=>{
               if(Item.genre === props.typeFilms.genre){
-                return(<FilmCard key={Item.name} Film={Item} />);
+                return(<FilmCard key={Item.id} Film={Item} />);
+              }else{
+                return(null);
               }
             })
           }

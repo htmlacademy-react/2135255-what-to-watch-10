@@ -5,7 +5,7 @@ import { AppRoute } from '../../enums/route-enum';
 import { FILMS } from '../../Moq/Films-List';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
-function Film(props:IPropsFilms):JSX.Element{
+function Detailes(props:IPropsFilms):JSX.Element{
   const {id} = useParams();
   const film = FILMS.filter((item)=> (item.id === id))[0];
   if(film === undefined){
@@ -57,7 +57,7 @@ function Film(props:IPropsFilms):JSX.Element{
                   <svg viewBox="0 0 19 19" width="19" height="19">
                     <use xlinkHref="#play-s"></use>
                   </svg>
-                  <span><Link to={`${AppRoute.Player}${film.id}`}>Play</Link></span>
+                  <span> <Link to={`${AppRoute.Player}${film.id}`}>Play</Link></span>
                 </button>
                 <button className="btn btn--list film-card__button" type="button">
                   <svg viewBox="0 0 19 20" width="19" height="20">
@@ -80,18 +80,44 @@ function Film(props:IPropsFilms):JSX.Element{
 
             <div className="film-card__desc">
               <MenuFilm Film={film} />
-              <div className="film-rating">
-                <div className="film-rating__score">8,9</div>
-                <p className="film-rating__meta">
-                  <span className="film-rating__level">Very good</span>
-                  <span className="film-rating__count">240 ratings</span>
-                </p>
-              </div>
-
-              <div className="film-card__text">
-                <p>{film.description}</p>
-                <p className="film-card__director"><strong>Director: Wes Anderson</strong></p>
-                <p className="film-card__starring"><strong>Starring: Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other</strong></p>
+              <div className="film-card__text film-card__row">
+                <div className="film-card__text-col">
+                  <p className="film-card__details-item">
+                    <strong className="film-card__details-name">Director</strong>
+                    <span className="film-card__details-value">Wes Anderson</span>
+                  </p>
+                  <p className="film-card__details-item">
+                    <strong className="film-card__details-name">Starring</strong>
+                    <span className="film-card__details-value">
+                      Bill Murray, <br/>
+                      Edward Norton, <br/>
+                      Jude Law, <br/>
+                      Willem Dafoe, <br/>
+                      Saoirse Ronan, <br/>
+                      Tony Revoloru, <br/>
+                      Tilda Swinton, <br/>
+                      Tom Wilkinson, <br/>
+                      Owen Wilkinson, <br/>
+                      Adrien Brody, <br/>
+                      Ralph Fiennes, <br/>
+                      Jeff Goldblum
+                    </span>
+                  </p>
+                </div>
+                <div className="film-card__text-col">
+                  <p className="film-card__details-item">
+                    <strong className="film-card__details-name">Run Time</strong>
+                    <span className="film-card__details-value">1h 39m</span>
+                  </p>
+                  <p className="film-card__details-item">
+                    <strong className="film-card__details-name">Genre</strong>
+                    <span className="film-card__details-value">Comedy</span>
+                  </p>
+                  <p className="film-card__details-item">
+                    <strong className="film-card__details-name">Released</strong>
+                    <span className="film-card__details-value">2014</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -101,4 +127,4 @@ function Film(props:IPropsFilms):JSX.Element{
     </>
   );
 }
-export default Film;
+export default Detailes;

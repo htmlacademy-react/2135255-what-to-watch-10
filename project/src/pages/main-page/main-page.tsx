@@ -2,10 +2,10 @@ import FilmCard from '../../components/film-card/film-card';
 import Header from '../../components/header/header';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
-function MainPage(FilmList:IPropsFilms): JSX.Element {
+function MainPage(props:IPropsFilms): JSX.Element {
   return (
     <>
-      <Header Film={FilmList.Films[0]} />
+      <Header Film={props.Films[0]} />
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
@@ -43,8 +43,8 @@ function MainPage(FilmList:IPropsFilms): JSX.Element {
           </ul>
           <div className="catalog__films-list">
             {
-              FilmList.Films.map((film)=>
-                <FilmCard key={film.name} Film={film} />
+              props.Films.map((film)=>
+                <FilmCard key={film.id} Film={film} />
               )
             }
           </div>

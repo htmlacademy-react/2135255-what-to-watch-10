@@ -3,13 +3,13 @@ import { AppRoute } from '../../enums/route-enum';
 import { IPropsFilm } from '../../types/type-films/Type-Films';
 import Promo from '../promo/promo';
 
-function Header(Film:IPropsFilm):JSX.Element{
+function Header(props:IPropsFilm):JSX.Element{
   return(
     <section className="film-card">
       <div className="film-card__bg">
-        <img src={Film.Film.img} alt="The Grand Budapest Hotel" />
+        <img src={props.Film.img} alt="The Grand Budapest Hotel" />
       </div>
-      <h1 className="visually-hidden">{Film.Film.name}</h1>
+      <h1 className="visually-hidden">{props.Film.name}</h1>
       <header className="page-header film-card__head">
         <div className="logo">
           <a className="logo__link">
@@ -29,7 +29,7 @@ function Header(Film:IPropsFilm):JSX.Element{
           </li>
         </ul>
       </header>
-      <Promo Film={Film.Film} />
+      <Promo Film={props.Film} />
     </section>
   );
 }
