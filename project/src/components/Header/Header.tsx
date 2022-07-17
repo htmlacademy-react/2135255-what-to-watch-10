@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../enums/route-enum';
 import { IPropsFilm } from '../../types/type-films/Type-Films';
 import Promo from '../promo/promo';
 
@@ -5,9 +7,9 @@ function Header(Film:IPropsFilm):JSX.Element{
   return(
     <section className="film-card">
       <div className="film-card__bg">
-        <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+        <img src={Film.Film.img} alt="The Grand Budapest Hotel" />
       </div>
-      <h1 className="visually-hidden">WTW</h1>
+      <h1 className="visually-hidden">{Film.Film.name}</h1>
       <header className="page-header film-card__head">
         <div className="logo">
           <a className="logo__link">
@@ -23,7 +25,7 @@ function Header(Film:IPropsFilm):JSX.Element{
             </div>
           </li>
           <li className="user-block__item">
-            <a className="user-block__link">Sign out</a>
+            <Link to={AppRoute.Login} className="user-block__link">Sign out</Link>
           </li>
         </ul>
       </header>
