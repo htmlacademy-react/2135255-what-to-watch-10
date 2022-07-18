@@ -8,14 +8,14 @@ function MenuFilm(props:IPropsFilm):JSX.Element{
   return(
     <nav className='film-nav film-card__nav'>
       <ul className='film-nav__list'>
-        <li className={pathname === `${AppRoute.Film}${props.Film.id}` ? 'film-nav__item film-nav__item--active' : 'film-nav__item'} >
-          <Link to={`${AppRoute.Film}${props.Film.id}`} className='film-nav__link'>Overview</Link>
+        <li className={pathname === `${AppRoute.Film}${props.film.id}` ? 'film-nav__item film-nav__item--active' : 'film-nav__item'} >
+          <Link to={`${AppRoute.Film}${props.film.id}`} className='film-nav__link'>Overview</Link>
         </li>
-        <li className={pathname === `${AppRoute.Detailes}${props.Film.id}` ? 'film-nav__item film-nav__item--active' : 'film-nav__item'} >
-          <Link to={`${AppRoute.Detailes}${props.Film.id}`} className='film-nav__link'>Details</Link>
+        <li className={pathname === `${AppRoute.Film}${props.film.id}/details` ? 'film-nav__item film-nav__item--active' : 'film-nav__item'} >
+          <Link to={`${AppRoute.Film}${props.film.id}/details`} className='film-nav__link'>Details</Link>
         </li>
-        <li className={pathname === `${AppRoute.Film}${props.Film.id}/review` ? 'film-nav__item film-nav__item--active' : 'film-nav__item'} >
-          <Link to={`${AppRoute.Film}${props.Film.id}/review`} className='film-nav__link'>Reviews</Link>
+        <li className={pathname === `${AppRoute.Film}${props.film.id}/review` ? 'film-nav__item film-nav__item--active' : 'film-nav__item'} >
+          <Link to={`${AppRoute.Film}${props.film.id}/review`} className='film-nav__link'>Reviews</Link>
         </li>
       </ul>
     </nav>

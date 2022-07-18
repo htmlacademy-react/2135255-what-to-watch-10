@@ -79,7 +79,7 @@ function Film(props:IPropsFilms):JSX.Element{
             </div>
 
             <div className="film-card__desc">
-              <MenuFilm Film={film} />
+              <MenuFilm film={film} />
               <div className="film-rating">
                 <div className="film-rating__score">8,9</div>
                 <p className="film-rating__meta">
@@ -97,7 +97,7 @@ function Film(props:IPropsFilms):JSX.Element{
           </div>
         </div>
       </section>
-      {<FilmFooter typeFilms={film} Films={props.Films} />}
+      {<FilmFooter typeFilms={film} films={props.films} />}
     </>
   );
 }

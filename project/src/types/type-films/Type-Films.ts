@@ -8,8 +8,11 @@ export interface IFilm{
   video:string;
 }
 export interface IPropsFilms{
-  Films:IFilm[]
+  films:IFilm[]
 }
 export interface IPropsFilm{
-  Film:IFilm
+  film:IFilm
+}
+export interface IRating{
+  Raiting:string
 }

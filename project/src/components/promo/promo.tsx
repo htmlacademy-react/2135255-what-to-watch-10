@@ -7,10 +7,10 @@ function Promo(props:IPropsFilm):JSX.Element{
     <div className="film-card__wrap">
       <div className="film-card__info">
         <div className="film-card__poster">
-          <img src={props.Film.img} alt="The Grand Budapest Hotel poster" width="218" height="327" />
+          <img src={props.film.img} alt="The Grand Budapest Hotel poster" width="218" height="327" />
         </div>
         <div className="film-card__desc">
-          <h2 className="film-card__title">{props.Film.name}</h2>
+          <h2 className="film-card__title">{props.film.name}</h2>
           <p className="film-card__meta">
             <span className="film-card__genre">Drama</span>
             <span className="film-card__year">2014</span>
@@ -21,7 +21,7 @@ function Promo(props:IPropsFilm):JSX.Element{
               <svg viewBox="0 0 19 19" width="19" height="19">
                 <use xlinkHref="#play-s"></use>
               </svg>
-              <span> <Link to={`${AppRoute.Player}${props.Film.id}`}>Play</Link></span>
+              <span> <Link to={`${AppRoute.Player}${props.film.id}`}>Play</Link></span>
             </button>
             <button className="btn btn--list film-card__button" type="button">
               <svg viewBox="0 0 19 20" width="19" height="20">

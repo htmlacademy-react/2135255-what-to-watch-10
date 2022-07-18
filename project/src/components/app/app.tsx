@@ -16,20 +16,20 @@ function App(props:IPropsFilms):JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Main} element={<MainPage Films={props.Films} />} />
+        <Route path={AppRoute.Main} element={<MainPage films={props.films} />} />
         <Route path={AppRoute.MyList} element={
           <PrivateRoute
             authorization={AuthorizationStatus.Auth}
           >
-            <MyList Films={props.Films} />
+            <MyList films={props.films} />
           </PrivateRoute>
         }
         />
         <Route path={AppRoute.Login} element={<Login />} />
-        <Route path={`${AppRoute.Film}:id`} element={<Film Films={props.Films} />} />
-        <Route path={`${AppRoute.Detailes}:id`} element={<Detailes Films={props.Films} />} />
-        <Route path={`${AppRoute.Film}:id/review`} element={<FilmReview Films={props.Films} />} />
-        <Route path={`${AppRoute.AddReview}:id`} element={<AddReview Films={props.Films} />} />
+        <Route path={`${AppRoute.Film}:id`} element={<Film films={props.films} />} />
+        <Route path={`${AppRoute.Film}:id/details`} element={<Detailes films={props.films} />} />
+        <Route path={`${AppRoute.Film}:id/review`} element={<FilmReview films={props.films} />} />
+        <Route path={`${AppRoute.AddReview}:id`} element={<AddReview films={props.films} />} />
         <Route path={`${AppRoute.Player}:id`} element={<Player />} />
         <Route path={AppRoute.NotFound} element={<Page404 />} />
       </Routes>

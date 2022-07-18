@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { AppRoute } from '../../enums/route-enum';
-import { FILMS } from '../../Moq/Films-List';
+import { FILMS, Raiting } from '../../Moq/Films-List';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
 function AddReview(props:IPropsFilms):JSX.Element{
@@ -70,35 +70,16 @@ function AddReview(props:IPropsFilms):JSX.Element{
         <form action="#" className="add-review__form">
           <div className="rating">
             <div className="rating__stars">
-              <input onChange={HandleChange} className="rating__input" id="star-10" type="radio" name="rating" value="10" />
-              <label className="rating__label" htmlFor="star-10">Rating 10</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-9" type="radio" name="rating" value="9" />
-              <label className="rating__label" htmlFor="star-9">Rating 9</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-8" type="radio" name="rating" value="8" checked />
-              <label className="rating__label" htmlFor="star-8">Rating 8</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-7" type="radio" name="rating" value="7" />
-              <label className="rating__label" htmlFor="star-7">Rating 7</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-6" type="radio" name="rating" value="6" />
-              <label className="rating__label" htmlFor="star-6">Rating 6</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-5" type="radio" name="rating" value="5" />
-              <label className="rating__label" htmlFor="star-5">Rating 5</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-4" type="radio" name="rating" value="4" />
-              <label className="rating__label" htmlFor="star-4">Rating 4</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-3" type="radio" name="rating" value="3" />
-              <label className="rating__label" htmlFor="star-3">Rating 3</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-2" type="radio" name="rating" value="2" />
-              <label className="rating__label" htmlFor="star-2">Rating 2</label>
-
-              <input onChange={HandleChange} className="rating__input" id="star-1" type="radio" name="rating" value="1" />
-              <label className="rating__label" htmlFor="star-1">Rating 1</label>
+              {
+                Raiting.reverse().map((item)=>
+                  (
+                    <>
+                      <input key={item.Raiting} onChange={HandleChange} className="rating__input" id={`star-${item.Raiting}`} type="radio" name="rating" value={item.Raiting}/>
+                      <label className="rating__label" htmlFor={`star-${item.Raiting}`}>Rating {item.Raiting}</label>
+                    </>
+                  )
+                )
+              }
             </div>
           </div>
 

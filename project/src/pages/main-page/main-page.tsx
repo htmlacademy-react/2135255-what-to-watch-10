@@ -1,11 +1,13 @@
 import FilmCard from '../../components/film-card/film-card';
 import Header from '../../components/header/header';
+import { MouseHover } from '../../hooks/mouse-hover';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
 function MainPage(props:IPropsFilms): JSX.Element {
+  const {MouseOver,MouseOut} = MouseHover();
   return (
     <>
-      <Header Film={props.Films[0]} />
+      <Header film={props.films[0]} />
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
@@ -43,8 +45,8 @@ function MainPage(props:IPropsFilms): JSX.Element {
           </ul>
           <div className="catalog__films-list">
             {
-              props.Films.map((film)=>
-                <FilmCard key={film.id} Film={film} />
+              props.films.map((film)=>
+                <FilmCard key={film.id} film={film} mouseOver={MouseOver} mouseOut={MouseOut} />
               )
             }
           </div>

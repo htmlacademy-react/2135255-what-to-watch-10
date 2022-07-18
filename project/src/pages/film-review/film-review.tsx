@@ -79,7 +79,7 @@ function FilmReview(props:IPropsFilms):JSX.Element{
             </div>
 
             <div className="film-card__desc">
-              <MenuFilm Film={film} />
+              <MenuFilm film={film} />
               <div className="film-card__reviews film-card__row">
                 <div className="film-card__reviews-col">
                   <div className="review">
@@ -160,7 +160,7 @@ function FilmReview(props:IPropsFilms):JSX.Element{
           </div>
         </div>
       </section>
-      {<FilmFooter typeFilms={film} Films={props.Films} />}
+      {<FilmFooter typeFilms={film} films={props.films} />}
     </>
   );
 }

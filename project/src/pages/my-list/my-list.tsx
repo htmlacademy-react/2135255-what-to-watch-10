@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import FilmCard from '../../components/film-card/film-card';
 import { AppRoute } from '../../enums/route-enum';
+import { MouseHover } from '../../hooks/mouse-hover';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
 function MyList(props:IPropsFilms):JSX.Element{
+  const {MouseOver,MouseOut} = MouseHover();
   return(
     <div className="user-page">
       <header className="page-header user-page__head">
@@ -33,8 +35,8 @@ function MyList(props:IPropsFilms):JSX.Element{
 
         <div className="catalog__films-list">
           {
-            props.Films.map((film)=>
-              <FilmCard key={film.id} Film={film} />
+            props.films.map((film)=>
+              <FilmCard key={film.id} film={film} mouseOver={MouseOver} mouseOut={MouseOut} />
             )
           }
         </div>

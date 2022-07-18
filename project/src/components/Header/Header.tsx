@@ -7,9 +7,9 @@ function Header(props:IPropsFilm):JSX.Element{
   return(
     <section className="film-card">
       <div className="film-card__bg">
-        <img src={props.Film.img} alt="The Grand Budapest Hotel" />
+        <img src={props.film.img} alt="The Grand Budapest Hotel" />
       </div>
-      <h1 className="visually-hidden">{props.Film.name}</h1>
+      <h1 className="visually-hidden">{props.film.name}</h1>
       <header className="page-header film-card__head">
         <div className="logo">
           <a className="logo__link">
@@ -29,7 +29,7 @@ function Header(props:IPropsFilm):JSX.Element{
           </li>
         </ul>
       </header>
-      <Promo Film={props.Film} />
+      <Promo film={props.film} />
     </section>
   );
 }
