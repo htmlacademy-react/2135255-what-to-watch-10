@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { AppRoute } from '../../enums/route-enum';
-import { FILMS, Raiting } from '../../Moq/Films-List';
+import { FILMS } from '../../Moq/Films-List';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
 function AddReview(props:IPropsFilms):JSX.Element{
@@ -71,15 +71,15 @@ function AddReview(props:IPropsFilms):JSX.Element{
           <div className="rating">
             <div className="rating__stars">
               {
-                Raiting.reverse().map((item)=>
-                  (
-                    <>
-                      <input key={item.Raiting} onChange={HandleChange} className="rating__input" id={`star-${item.Raiting}`} type="radio" name="rating" value={item.Raiting}/>
-                      <label className="rating__label" htmlFor={`star-${item.Raiting}`}>Rating {item.Raiting}</label>
-                    </>
-                  )
-                )
+                Array(10).fill(1).map((a,i) =>(
+                  <>
+                    <input key={a} onChange={HandleChange} className="rating__input" id={`star-${i}`} type="radio" name="rating" value={i} />
+                    <label className="rating__label" htmlFor={`star-${i}`}>Rating {i}</label>
+                  </>
+                ))
               }
+
+
             </div>
           </div>
 

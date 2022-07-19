@@ -1,10 +1,8 @@
-import FilmCard from '../../components/film-card/film-card';
+import FilmList from '../../components/film-list/film-list';
 import Header from '../../components/header/header';
-import { MouseHover } from '../../hooks/mouse-hover';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
 function MainPage(props:IPropsFilms): JSX.Element {
-  const {MouseOver,MouseOut} = MouseHover();
   return (
     <>
       <Header film={props.films[0]} />
@@ -43,13 +41,7 @@ function MainPage(props:IPropsFilms): JSX.Element {
               <a href='/#' className="catalog__genres-link">Thrillers</a>
             </li>
           </ul>
-          <div className="catalog__films-list">
-            {
-              props.films.map((film)=>
-                <FilmCard key={film.id} film={film} mouseOver={MouseOver} mouseOut={MouseOut} />
-              )
-            }
-          </div>
+          <FilmList films={props.films} />
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
           </div>

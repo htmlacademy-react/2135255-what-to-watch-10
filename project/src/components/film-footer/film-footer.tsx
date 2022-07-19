@@ -1,4 +1,4 @@
-import { MouseHover } from '../../hooks/mouse-hover';
+import { useMouseHover } from '../../hooks/mouse-hover';
 import { IFilm } from '../../types/type-films/Type-Films';
 import FilmCard from '../film-card/film-card';
 interface IFilmsFooter{
@@ -7,7 +7,7 @@ interface IFilmsFooter{
 }
 
 function FilmFooter(props:IFilmsFooter):JSX.Element{
-  const {MouseOver,MouseOut} = MouseHover();
+  const {MouseOver,MouseOut} = useMouseHover();
   return(
     <div className="page-content">
       <section className="catalog catalog--like-this">

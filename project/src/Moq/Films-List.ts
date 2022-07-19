@@ -1,4 +1,4 @@
-import { IFilm, IRating } from '../types/type-films/Type-Films';
+import { IFilm } from '../types/type-films/Type-Films';
 
 
 function randomDate(start:Date, end:Date) {
@@ -86,37 +86,4 @@ export const FILMS:IFilm[] = [
     name:'Midnight Special',
     date: randomDate(new Date(2012, 0, 1), new Date()),
     img:'img/midnight-special.jpg'},
-];
-
-export const Raiting:IRating[] = [
-  {
-    Raiting:'10'
-  },
-  {
-    Raiting:'9'
-  },
-  {
-    Raiting:'8'
-  },
-  {
-    Raiting:'7'
-  },
-  {
-    Raiting:'6'
-  },
-  {
-    Raiting:'5'
-  },
-  {
-    Raiting:'4'
-  },
-  {
-    Raiting:'3'
-  },
-  {
-    Raiting:'2'
-  },
-  {
-    Raiting:'1'
-  },
 ];
