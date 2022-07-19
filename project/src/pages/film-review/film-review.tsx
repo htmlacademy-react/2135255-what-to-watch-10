@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import FilmFooter from '../../components/film-footer/film-footer';
-import PropertyFilm from '../../components/property-film/property-film';
+import MenuFilm from '../../components/menu-film/menu-film';
 import { AppRoute } from '../../enums/route-enum';
 import { FILMS } from '../../Moq/Films-List';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
@@ -57,7 +57,7 @@ function FilmReview(props:IPropsFilms):JSX.Element{
                   <svg viewBox="0 0 19 19" width="19" height="19">
                     <use xlinkHref="#play-s"></use>
                   </svg>
-                  <span> <Link to={AppRoute.Player.replace(':id',film.id)}>Play</Link></span>
+                  <span> <Link to={`${AppRoute.Player}${film.id}`}>Play</Link></span>
                 </button>
                 <button className="btn btn--list film-card__button" type="button">
                   <svg viewBox="0 0 19 20" width="19" height="20">
@@ -66,7 +66,7 @@ function FilmReview(props:IPropsFilms):JSX.Element{
                   <span><Link to={AppRoute.MyList} className="user-block__link">My list</Link></span>
                   <span className="film-card__count">9</span>
                 </button>
-                <a href="add-review.html" className="btn film-card__button">Add review</a>
+                <Link to={`${AppRoute.AddReview}${film.id}`} className="btn film-card__button">Add review</Link>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ function FilmReview(props:IPropsFilms):JSX.Element{
             </div>
 
             <div className="film-card__desc">
-              <PropertyFilm Film={film} />
+              <MenuFilm film={film} />
               <div className="film-card__reviews film-card__row">
                 <div className="film-card__reviews-col">
                   <div className="review">
@@ -160,7 +160,7 @@ function FilmReview(props:IPropsFilms):JSX.Element{
           </div>
         </div>
       </section>
-      {<FilmFooter typeFilms={film} Films={props.Films} />}
+      {<FilmFooter typeFilms={film} films={props.films} />}
     </>
   );
 }

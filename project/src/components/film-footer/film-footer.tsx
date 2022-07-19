@@ -1,11 +1,13 @@
+import { useMouseHover } from '../../hooks/mouse-hover';
 import { IFilm } from '../../types/type-films/Type-Films';
 import FilmCard from '../film-card/film-card';
 interface IFilmsFooter{
   typeFilms:IFilm,
-  Films:IFilm[]
+  films:IFilm[]
 }
 
 function FilmFooter(props:IFilmsFooter):JSX.Element{
+  const {MouseOver,MouseOut} = useMouseHover();
   return(
     <div className="page-content">
       <section className="catalog catalog--like-this">
@@ -13,9 +15,11 @@ function FilmFooter(props:IFilmsFooter):JSX.Element{
 
         <div className="catalog__films-list">
           {
-            props.Films.map((Item)=>{
+            props.films.map((Item)=>{
               if(Item.genre === props.typeFilms.genre){
-                return(<FilmCard key={Item.name} Film={Item} />);
+                return(<FilmCard key={Item.id} film={Item} mouseOver={MouseOver} mouseOut={MouseOut} />);
+              }else{
+                return(null);
               }
             })
           }

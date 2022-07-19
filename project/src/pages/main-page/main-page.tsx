@@ -1,11 +1,11 @@
-import FilmCard from '../../components/film-card/film-card';
+import FilmList from '../../components/film-list/film-list';
 import Header from '../../components/header/header';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
-function MainPage(FilmList:IPropsFilms): JSX.Element {
+function MainPage(props:IPropsFilms): JSX.Element {
   return (
     <>
-      <Header Film={FilmList.Films[0]} />
+      <Header film={props.films[0]} />
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
@@ -41,13 +41,7 @@ function MainPage(FilmList:IPropsFilms): JSX.Element {
               <a href='/#' className="catalog__genres-link">Thrillers</a>
             </li>
           </ul>
-          <div className="catalog__films-list">
-            {
-              FilmList.Films.map((film)=>
-                <FilmCard key={film.name} Film={film} />
-              )
-            }
-          </div>
+          <FilmList films={props.films} />
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
           </div>

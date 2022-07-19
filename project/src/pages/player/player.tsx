@@ -1,8 +1,9 @@
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams,useNavigate } from 'react-router-dom';
 import { AppRoute } from '../../enums/route-enum';
 import { FILMS } from '../../Moq/Films-List';
 
 function Player():JSX.Element{
+  const navigate = useNavigate();
   const {id} = useParams();
   const film = FILMS.filter((item)=> (item.id === id))[0];
   if(film === undefined){
@@ -14,8 +15,7 @@ function Player():JSX.Element{
     <div className="player">
       <video src="#" className="player__video" poster={film.img}></video>
 
-      <button type="button" className="player__exit">Exit</button>
-
+      <button type="button" onClick={()=> navigate(-1)} className="player__exit">Exit</button>
       <div className="player__controls">
         <div className="player__controls-row">
           <div className="player__time">

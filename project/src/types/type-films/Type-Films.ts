@@ -5,10 +5,14 @@ export interface IFilm{
   img:string;
   genre:string;
   description:string;
+  video:string;
 }
 export interface IPropsFilms{
-  Films:IFilm[]
+  films:IFilm[]
 }
 export interface IPropsFilm{
-  Film:IFilm
+  film:IFilm
+}
+export interface IRating{
+  Raiting:string
 }

@@ -11,7 +11,7 @@ function PrivateRoute(props:PrivateRouteProps){
   return(
     authorization === AuthorizationStatus.Auth
       ? children
-      : <Navigate to={AppRoute.Main} />
+      : <Navigate to={AppRoute.Login} />
   );
 }
 export default PrivateRoute;
