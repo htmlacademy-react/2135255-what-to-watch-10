@@ -4,13 +4,14 @@ import { AppRoute } from '../../enums/route-enum';
 import { FILMS } from '../../Moq/Films-List';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
-function AddReview(props:IPropsFilms):JSX.Element{
+function AddReview(_props:IPropsFilms):JSX.Element{
   const [formData,SetFormData] = useState({
     rating:'',
     reviewText:''
   });
   const {id} = useParams();
   const film = FILMS.filter((item)=> (item.id === id))[0];
+  const ArrayRaiting = [1,2,3,4,5,6,7,8,9,10];
   if(film === undefined){
     return(
       <Navigate to={AppRoute.NotFound} />
@@ -71,9 +72,9 @@ function AddReview(props:IPropsFilms):JSX.Element{
           <div className="rating">
             <div className="rating__stars">
               {
-                Array(10).fill(1).map((a,i) =>(
+                ArrayRaiting.map((i) =>(
                   <>
-                    <input key={a} onChange={HandleChange} className="rating__input" id={`star-${i}`} type="radio" name="rating" value={i} />
+                    <input key={i} onChange={HandleChange} className="rating__input" id={`star-${i}`} type="radio" name="rating" value={i } />
                     <label className="rating__label" htmlFor={`star-${i}`}>Rating {i}</label>
                   </>
                 ))
