@@ -5,7 +5,7 @@ import { useMouseHover } from '../../hooks/mouse-hover';
 import { IPropsFilms } from '../../types/type-films/Type-Films';
 
 function MyList(props:IPropsFilms):JSX.Element{
-  const {MouseOver,MouseOut} = useMouseHover();
+  const {MouseOver,MouseOut,activVideo} = useMouseHover();
   return(
     <div className="user-page">
       <header className="page-header user-page__head">
@@ -36,7 +36,7 @@ function MyList(props:IPropsFilms):JSX.Element{
         <div className="catalog__films-list">
           {
             props.films.map((film)=>
-              <FilmCard key={film.id} film={film} mouseOver={MouseOver} mouseOut={MouseOut} />
+              <FilmCard key={film.id} film={film} activeVideoId={activVideo} mouseOver={MouseOver} mouseOut={MouseOut} />
             )
           }
         </div>
