@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 export const useMouseHover = () => {
+  const DelayMouseHover = 1000;
   const [trigger,SetTrigger] = useState('');
   const [activVideo,SetActivVideo] = useState('');
   const MouseOver: React.MouseEventHandler<HTMLElement> = (e) => {
@@ -13,7 +14,7 @@ export const useMouseHover = () => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       SetActivVideo(trigger);
-    }, 1000);
+    }, DelayMouseHover);
     return () => {
       clearTimeout(timer);
     };
