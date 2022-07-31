@@ -10,6 +10,7 @@ export const useMouseHover = () => {
   };
   const MouseOut: React.MouseEventHandler<HTMLElement> = (e) => {
     SetTrigger('0');
+    SetActivVideo('0');
   };
   React.useEffect(() => {
     const timer = setTimeout(() => {
